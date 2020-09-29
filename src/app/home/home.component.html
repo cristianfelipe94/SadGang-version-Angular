@@ -4,7 +4,7 @@
 
 <section *ngIf="gallery.images" class="gallerySection">
   <div class="gallerySection__gallery">
-    <div *ngFor="let image of gallery.images; index as i" class="galleryPanel">
+    <div *ngFor="let image of gallery.images; index as i" class="galleryContainer">
       <div class="galleryPanel" style="background-image: url({{image}});">
       </div>
       <div class="gradient--panel">

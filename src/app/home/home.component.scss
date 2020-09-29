@@ -73,6 +73,11 @@
 }
 
 .gallerySection {
+  margin: 5vh auto;
+
+  @media only screen and (min-width: 770px) {
+    margin: 10vh auto;
+  }
 
   .gradient--panel {
     overflow: hidden;
@@ -96,7 +101,7 @@
     text-align: center;
 
     .headTitle {
-      font-size: 90px;
+      font-size: 4rem;
       margin: 10vh 0 0;
     }
 
@@ -120,8 +125,15 @@
       margin: 0 auto;
     }
 
+    .galleryContainer {
+      height: 100%;
+      width: 100%;
+      margin: 0 2vw;
+    }
+
     .galleryPanel {
       background-size: cover;
+      background-position: 50% 50%;
       height: 100%;
       width: 100%;
     }
