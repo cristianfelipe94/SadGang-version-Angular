@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  gallery= {
+    title: 'SadGang',
+    description: 'Costa Rica Streetware'
+  }
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

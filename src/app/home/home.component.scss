@@ -12,3 +12,13 @@
     max-width: 230px;
   }
 }
+
+.gallerySection {
+  position: relative;
+
+  &__gallery {
+    height: 25vh;
+    width: 80vw;
+    margin: 0 auto;
+  }
+}

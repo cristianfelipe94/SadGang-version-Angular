@@ -2,23 +2,18 @@
   <img class="headerNavigation__logo" alt="SadGang brand logo" src="../../assets/main-logo.png"/>
 </header>
 
-<section>
-  <div className="gallery--v1">
-    <div className="head">
-      <h1 className="head__title"></h1>
-      <p className="head__title"></p>
+<section class="gallerySection">
+  <div class="gallerySection__head">
+    <h1 class="head__title">{{gallery.title}}</h1>
+    <p class="head__title">{{gallery.description}}</p>
+  </div>
+  <div class="gallerySection__gallery">
+    <div class="gallery__panel">
+      <img alt="Gallery image, SadGang's clothes"/>
+      <span class="icon--touch"></span>
     </div>
-    <div className="gallery">
-      <div className="gallery__panel">
-        <div>
-          <img alt="Gallery image, SadGang's clothes"/>
-          <span className="icon--touch"></span>
-        </div>
-      </div>
-    </div>
-    <div className="gradient--panel">
-      <span className="gradient--line"></span>
+    <div class="gradient--panel">
+      <span class="gradient--line"></span>
     </div>
   </div>
-
 </section>
