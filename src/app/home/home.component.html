@@ -1,19 +1,20 @@
 <header class="headerNavigation">
-  <img class="headerNavigation__logo" alt="SadGang brand logo" src="../../assets/main-logo.png"/>
+  <img class="headerNavigation__logo" alt="SadGang brand logo" src="../../assets/main-logo.png" />
 </header>
 
-<section class="gallerySection">
-  <div class="gallerySection__head">
-    <h1 class="head__title">{{gallery.title}}</h1>
-    <p class="head__title">{{gallery.description}}</p>
-  </div>
+<section *ngIf="gallery.images" class="gallerySection">
   <div class="gallerySection__gallery">
-    <div class="gallery__panel">
-      <img alt="Gallery image, SadGang's clothes"/>
-      <span class="icon--touch"></span>
+    <div *ngFor="let image of gallery.images; index as i" class="galleryPanel">
+      <div class="galleryPanel" style="background-image: url({{image}});">
+      </div>
+      <div class="gradient--panel">
+        <span class="gradient--line"></span>
+      </div>
     </div>
-    <div class="gradient--panel">
-      <span class="gradient--line"></span>
-    </div>
+    <span class="icon--touch"></span>
+  </div>
+  <div class="gallerySection__head">
+    <h1 *ngIf="gallery.title" class="headTitle">{{gallery.title}}</h1>
+    <p *ngIf="gallery.description" class="headDescription">{{gallery.description}}</p>
   </div>
 </section>

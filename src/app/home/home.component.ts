@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   gallery= {
     title: 'SadGang',
-    description: 'Costa Rica Streetware'
+    description: 'Costa Rica Streetware',
+    images: [
+      '../../assets/background-girl-one.png',
+      '../../assets/background-girl-two.png',
+      '../../assets/background-boy-one.png',
+      '../../assets/background-boy-two.png'
+    ]
   }
 
   constructor() { }

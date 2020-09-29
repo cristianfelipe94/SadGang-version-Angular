@@ -1,3 +1,62 @@
+// Animation Starts
+@keyframes touchScreenLatency {
+  0% {
+    transform: scale(1);
+    background-color: deeppink;
+  }
+  50% {
+    transform: scale(1.2);
+    background-color: rgba(46, 46, 46, 0.397);
+  }
+  90%, 100% {
+    transform: scale(1);
+    background-color: deeppink;
+  }
+}
+
+@keyframes loadingDotsAnimation {
+  0% {
+    content: ".";
+    color: red;
+  }
+  50% {
+    content: "..";
+    color: orange;
+  }
+  90%, 100% {
+    content: "...";
+    color: greenyellow;
+  }
+}
+
+@keyframes gradientTransition {
+  12.5% {
+    right: 0vw;
+  }
+  25% {
+    right: -300vw;
+  }
+  37.5% {
+    right:  0;
+  }
+  50% {
+    right: -100vw;
+  }
+  62.5% {
+    right: -200vw;
+  }
+  75% {
+    right: 0vw;
+  }
+  87.5% {
+    right: -300vw;
+  }
+  100% {
+    right: 0vw;
+  }
+}
+// Animation Ends
+
 .headerNavigation {
   background-color: white;
   text-align: center;
@@ -9,16 +68,87 @@
 
   &__logo {
     margin: 0 auto;
-    max-width: 230px;
+    max-width: 150px;
   }
 }
 
 .gallerySection {
-  position: relative;
+
+  .gradient--panel {
+    overflow: hidden;
+    position: relative;
+    height: 2px;
+  }
+
+  .gradient--line {
+    background: rgb(255,33,109);
+    background: linear-gradient(90deg, rgba(255,33,109,1) 0%, rgba(155,33,255,1) 25%, rgba(33,212,253,1) 50%, rgba(8,174,234,1) 75%, rgba(42,245,152,1) 100%);
+    height: 100%;
+    width: 400vw;
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+    right: 0px;
+    animation: infinite gradientTransition 10s;
+  }
+
+  &__head {
+    text-align: center;
+
+    .headTitle {
+      font-size: 90px;
+      margin: 10vh 0 0;
+    }
+
+    .headDescription::after {
+      content: ".";
+      color: red;
+      position: absolute;
+      animation: loadingDotsAnimation 4s infinite;
+    }
+  }
 
   &__gallery {
-    height: 25vh;
-    width: 80vw;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    margin: 0 20px;
+    position: relative;
+
+    @media only screen and (min-width: 770px) {
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+
+    .galleryPanel {
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    .icon--touch {
+      height: 20px;
+      width: 20px;
+      border-radius: 50px;
+      position: absolute;
+      bottom: 8px;
+      right: 28px;
+      margin: 0 auto;
+      animation: touchScreenLatency 4s infinite;
+      transform: scale(1.2);
+      animation-fill-mode: forwards;
+      z-index: 2;
+    }
+
+    .icon--touch::before {
+      content: "";
+      background-image: url('../../assets/touch-screen.svg');
+      height: 40px;
+      width: 40px;
+      left: -10px;
+      top: -3px;
+      background-size: contain;
+      position: absolute;
+    }
   }
 }
